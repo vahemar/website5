@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider } from '@chakra-ui/react';
+import { React } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import Header from './components/Header/Header';
+import MobileHeader from './components/MobileHeader/MobileHeader';
+import Home from './pages/Home';
+import Footer from './components/Footer/Footer';
+import MobileFooter from './components/MobileFooter/MobileFooter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <ChakraProvider>
+        <Header />
+        <MobileHeader />
+        <Home />
+        <Footer />
+        <MobileFooter />
+      </ChakraProvider>
+    </BrowserRouter>
   );
 }
 
